@@ -1,0 +1,7 @@
+.title {
+    display: flex;
+    justify-content: center;
+    text-transform: uppercase;
+    background-color: white;
+    padding: 20px 0;
+}

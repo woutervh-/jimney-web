@@ -1,0 +1,43 @@
+{
+  "name": "jimney-web",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "start": "webpack-dev-server",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tsc": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/woutervh-/jimney-web.git"
+  },
+  "author": "Wouter van Heeswijk",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/woutervh-/jimney-web/issues"
+  },
+  "homepage": "https://github.com/woutervh-/jimney-web#readme",
+  "devDependencies": {
+    "@types/react": "^16.3.14",
+    "@types/react-dom": "^16.0.5",
+    "@types/react-router-dom": "^4.2.6",
+    "css-loader": "^0.28.11",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.4.0",
+    "postcss-cssnext": "^3.1.0",
+    "postcss-loader": "^2.1.5",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "react-router-dom": "^4.2.2",
+    "style-loader": "^0.21.0",
+    "sugarss": "^1.0.1",
+    "ts-loader": "^4.3.0",
+    "typescript": "^2.8.3",
+    "uglifyjs-webpack-plugin": "^1.2.5",
+    "webpack": "^4.8.1",
+    "webpack-cli": "^2.1.3",
+    "webpack-dev-server": "^3.1.4"
+  }
+}

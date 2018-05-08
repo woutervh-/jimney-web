@@ -8,8 +8,6 @@ module.exports = {
   entry: './src/index.tsx',
   mode: 'development',
   devtool: 'inline-source-map',
-  // mode: 'production',
-  // devtool: 'source-map',
   module: {
     rules: [{
       test: /\.tsx?$/,
@@ -39,15 +37,6 @@ module.exports = {
     'react': 'React',
     'react-dom': 'ReactDOM',
     'react-router-dom': 'ReactRouterDOM'
-  },
-  optimization: {
-    minimizer: [
-      new UglifyJsPlugin({
-        cache: true,
-        parallel: true,
-        sourceMap: true
-      })
-    ]
   },
   plugins: [
     new MiniCssExtractPlugin({

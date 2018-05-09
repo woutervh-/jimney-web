@@ -14,7 +14,7 @@ module.exports = {
       use: 'ts-loader',
       exclude: /node_modules/
     }, {
-      test: /\.css$/,
+      test: /\.scss$/,
       use: [{
         loader: 'style-loader'
       }, {
@@ -23,6 +23,13 @@ module.exports = {
         loader: 'css-loader'
       }, {
         loader: 'postcss-loader'
+      }, {
+        loader: 'sass-loader'
+      }]
+    }, {
+      test: /\.png$/,
+      use: [{
+        loader: 'url-loader'
       }]
     }]
   },

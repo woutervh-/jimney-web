@@ -3,14 +3,14 @@ import * as ReactRouterDOM from 'react-router-dom';
 import { Menu } from './components/menu/menu';
 import { Title } from './components/title/title';
 import { Content } from './components/content/content';
-import './style.css';
+import './style.scss';
 
 export class App extends React.Component<{}, never> {
     render() {
-        return <div className="wrapper">
+        return <React.Fragment>
             <Title />
             <Menu />
             <Content />
-        </div>;
+        </React.Fragment>;
     }
 }

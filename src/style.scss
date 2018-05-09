@@ -1,0 +1,58 @@
+html {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    min-height: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 8px;
+    padding-bottom: 40px;
+    font-family: 'Catamaran', serif;
+    font-size: 18px;
+    background-color: #00003a;
+
+    position: relative;
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+        background: url(./images/bubbles.png), linear-gradient(rgb(17, 128, 143) 0, #00003a 900px);
+        background-repeat: repeat;
+        pointer-events: none;
+    }
+}
+
+.vignette {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    box-shadow: 0 0 200px rgba(0, 0, 0, 0.9) inset;
+}
+
+#container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-basis: 80%;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 720px) {
+    body {
+        padding: 0 16px;
+        padding-bottom: 40px;
+    }
+
+    #container {
+        flex-grow: 1;
+    }
+}

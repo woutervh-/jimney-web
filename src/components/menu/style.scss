@@ -5,10 +5,17 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    background-color: gainsboro;
+    background-color: #514aac;
 }
 
 .menu-item {
+    display: block;
+    color: white;
+    text-decoration: none;
     padding: 8px;
     text-transform: uppercase;
+    background-color: #514aac;
+    &:hover {
+        background-color: lighten(#514aac, 20%);
+    }
 }

@@ -1,49 +1,21 @@
-const path = require('path');
+const merge = require('webpack-merge');
 const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const common = require('./webpack.common.js');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
-module.exports = {
-  entry: './src/index.tsx',
+module.exports = merge(common, {
   mode: 'production',
   devtool: 'source-map',
   module: {
     rules: [{
-      test: /\.tsx?$/,
-      use: 'ts-loader',
-      exclude: /node_modules/
-    }, {
-      test: /\.scss$/,
-      use: [{
-        loader: 'style-loader'
-      }, {
-        loader: MiniCssExtractPlugin.loader
-      }, {
-        loader: 'css-loader'
-      }, {
-        loader: 'postcss-loader'
-      }, {
-        loader: 'sass-loader'
-      }]
-    }, {
       test: /\.png$/,
       use: [{
-        loader: 'file-loader'
+        loader: 'file-loader',
+        options: {
+          name: 'images/[name].[ext]'
+        }
       }]
     }]
-  },
-  resolve: {
-    extensions: ['.tsx', '.ts', '.js']
-  },
-  output: {
-    filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist')
-  },
-  externals: {
-    'react': 'React',
-    'react-dom': 'ReactDOM',
-    'react-router-dom': 'ReactRouterDOM'
   },
   optimization: {
     minimizer: [
@@ -53,12 +25,5 @@ module.exports = {
         sourceMap: true
       })
     ]
-  },
-  plugins: [
-    new MiniCssExtractPlugin({
-      filename: '[name].css',
-      chunkFilename: '[id].css'
-    }),
-    new HtmlWebpackPlugin({ template: './src/index.html' })
-  ]
-};
+  }
+});

@@ -7,7 +7,7 @@ module.exports = merge(common, {
   devtool: 'inline-source-map',
   module: {
     rules: [{
-      test: /\.png$/,
+      test: /\.(png|svg)$/,
       use: [{
         loader: 'url-loader'
       }]

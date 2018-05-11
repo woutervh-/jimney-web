@@ -7,12 +7,30 @@ module.exports = merge(common, {
   devtool: 'source-map',
   module: {
     rules: [{
+      test: /favicon\.ico$/,
+      use: [{
+        loader: 'file-loader',
+        options: {
+          name: 'favicon.ico'
+        }
+      }]
+    }, {
       test: /\.png$/,
       use: [{
         loader: 'file-loader',
         options: {
           name: 'images/[name].[ext]'
         }
+      }]
+    }, {
+      test: /\.svg$/,
+      use: [{
+        loader: 'file-loader',
+        options: {
+          name: 'images/[name].[ext]'
+        }
+      }, {
+        loader: 'svgo-loader'
       }]
     }]
   },

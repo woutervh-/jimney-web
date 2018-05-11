@@ -1,3 +1,4 @@
+const path = require('path');
 const merge = require('webpack-merge');
 const common = require('./webpack.common.js');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
@@ -7,11 +8,11 @@ module.exports = merge(common, {
   devtool: 'source-map',
   module: {
     rules: [{
-      test: /favicon\.ico$/,
+      test: /favicon.*\.png$/,
       use: [{
         loader: 'file-loader',
         options: {
-          name: 'favicon.ico'
+          name: '[name].[ext]'
         }
       }]
     }, {
@@ -21,7 +22,8 @@ module.exports = merge(common, {
         options: {
           name: 'images/[name].[ext]'
         }
-      }]
+      }],
+      include: [path.resolve(__dirname, 'src/images')]
     }, {
       test: /\.svg$/,
       use: [{
@@ -31,7 +33,8 @@ module.exports = merge(common, {
         }
       }, {
         loader: 'svgo-loader'
-      }]
+      }],
+      include: [path.resolve(__dirname, 'src/images')]
     }]
   },
   optimization: {

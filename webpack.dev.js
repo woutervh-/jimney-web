@@ -8,18 +8,19 @@ module.exports = merge(common, {
   devtool: 'inline-source-map',
   module: {
     rules: [{
-      test: /favicon\.ico$/,
+      test: /favicon.*\.png$/,
       use: [{
         loader: 'file-loader',
         options: {
-          name: 'favicon.ico'
+          name: '[name].[ext]'
         }
       }]
     }, {
       test: /\.(png|svg)$/,
       use: [{
         loader: 'url-loader'
-      }]
+      }],
+      include: [path.resolve(__dirname, 'src/images')]
     }]
   },
   plugins: [

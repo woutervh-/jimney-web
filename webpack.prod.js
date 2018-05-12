@@ -16,7 +16,7 @@ module.exports = merge(common, {
         }
       }]
     }, {
-      test: /\.png$/,
+      test: /\.(png|jpg)$/,
       use: [{
         loader: 'file-loader',
         options: {

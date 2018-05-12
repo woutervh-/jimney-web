@@ -16,7 +16,7 @@ module.exports = merge(common, {
         }
       }]
     }, {
-      test: /\.(png|svg)$/,
+      test: /\.(png|svg|jpg)$/,
       use: [{
         loader: 'url-loader'
       }],

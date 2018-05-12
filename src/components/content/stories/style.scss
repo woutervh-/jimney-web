@@ -1,7 +1,9 @@
 @import '../../../shared.scss';
+
 .stories-container {
     display: flex;
-    flex-wrap: wrap; // Use negative margin and margin on child elements until row/column gap is possible
+    flex-wrap: wrap;
+    // Use negative margin and margin on child elements until row/column gap is possible
     // https://www.w3.org/TR/css-align-3/
     // https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Mastering_Wrapping_of_Flex_Items#Creating_gutters_between_items
     margin: -10px;
@@ -10,10 +12,11 @@
 .story {
     margin: 10px;
     padding: 12px;
-    flex-basis: 400px;
+    flex-basis: 45%;
     flex-grow: 1;
     background-color: rgba(#514aac, 0.1);
     box-shadow: 0 0 2px rgba(#514aac, 0.6);
+
     @include small {
         display: flex;
         flex-direction: column;
@@ -29,6 +32,7 @@
     margin-top: 36px;
     box-shadow: 0 0 2px rgba(#514aac, 1);
     float: left;
+    
     @include small {
         margin: 8px;
     }

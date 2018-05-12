@@ -17,6 +17,7 @@ body {
     font-size: 18px;
     background-color: #00003a;
     position: relative;
+
     &:before {
         content: '';
         position: absolute;
@@ -28,6 +29,7 @@ body {
         background-repeat: repeat;
         pointer-events: none;
     }
+
     @include small {
         padding: 0 16px;
         padding-bottom: 40px;
@@ -49,6 +51,7 @@ body {
     flex-direction: column;
     flex-basis: 80%;
     box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+    
     @include small {
         flex-grow: 1;
     }

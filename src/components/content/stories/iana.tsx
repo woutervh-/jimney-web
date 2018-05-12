@@ -4,10 +4,17 @@ import * as IanaImage from '../../../images/iana.png';
 
 export class Iana extends React.Component<{}, never> {
     renderDescription() {
-        return 'Description';
+        return `
+        It is the year 4000.
+        A young synth is in pursuit of an artifact that will help prevent the impending apocalypse.
+        `;
     }
 
     render() {
-        return <Story title="Title" image={IanaImage} description={this.renderDescription()} />;
+        return <Story
+            title="Iana"
+            preview={{ type: 'amazon', asin: 'B01H5RDWUU', ref: 'cm_sw_r_kb_dp_Y709AbXHQT5BD' }}
+            description={this.renderDescription()}
+        />;
     }
 }

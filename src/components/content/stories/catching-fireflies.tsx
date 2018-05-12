@@ -4,10 +4,16 @@ import * as CatchingFirefliesImage from '../../../images/catching-fireflies.png'
 
 export class CatchingFireflies extends React.Component<{}, never> {
     renderDescription() {
-        return 'Description';
+        return `
+        A young water genie has to convince his prey to join him in the depths.
+        `;
     }
 
     render() {
-        return <Story title="Title" image={CatchingFirefliesImage} description={this.renderDescription()} />;
+        return <Story
+            title="Catching Fireflies"
+            preview={{ type: 'amazon', asin: 'B01H5RDX0Y', ref: 'cm_sw_r_kb_dp_O609AbD3RZWKX' }}
+            description={this.renderDescription()}
+        />;
     }
 }

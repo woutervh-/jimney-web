@@ -14,7 +14,7 @@ export class ElegyOfTheStars extends React.Component<{}, never> {
     render() {
         return <Story
             title="Elegy of the Stars"
-            image={ElegyOfTheStarsImage}
+            preview={{ type: 'image', image: ElegyOfTheStarsImage }}
             description={this.renderDescription()}
         />;
     }

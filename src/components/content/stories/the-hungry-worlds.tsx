@@ -4,10 +4,16 @@ import * as TheHungryWorldsImage from '../../../images/the-hungry-worlds.jpg';
 
 export class TheHungryWorlds extends React.Component<{}, never> {
     renderDescription() {
-        return 'Description';
+        return `
+        After stealing an expensive sword, thief Ristar's conscience leads her to investigate the source of ravenous energy coming from the Troll's Forest.
+        `;
     }
 
     render() {
-        return <Story title="Title" image={TheHungryWorldsImage} description={this.renderDescription()} />;
+        return <Story
+            title="The Hungry Worlds"
+            preview={{ type: 'amazon', asin: 'B01H5993E2', ref: 'cm_sw_r_kb_dp_J809Ab6SSV5Z8' }}
+            description={this.renderDescription()}
+        />;
     }
 }

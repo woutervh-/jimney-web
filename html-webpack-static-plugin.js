@@ -1,9 +1,6 @@
 const jsdom = require('jsdom');
 const vm = require('vm');
 
-// TODO: delete chunk or delete asset from compilation that will be rendered as HTML
-// https://github.com/numical/script-ext-html-webpack-plugin/blob/master/lib/plugin.js#L98
-
 class HtmlWebpackStaticPlugin {
     constructor(options) {
         this.pluginName = 'HtmlWebpackStaticPlugin';
@@ -13,13 +10,23 @@ class HtmlWebpackStaticPlugin {
         if (compiler.options.output.libraryTarget !== 'umd') {
             throw new Error('This plugin currently only supports "umd" for output.libraryTarget. If you would like to see any of the targets from https://webpack.js.org/configuration/output/#output-librarytarget supported, please open an issue.');
         }
+
         compiler.hooks.compilation.tap(this.pluginName, (compilation) => this.applyCompilation(compilation));
+
+        compiler.hooks.emit.tap(this.pluginName, (compilation) => {
+            for (const chunk of compilation.chunks) {
+                for (const file of chunk.files) {
+                    delete compilation.assets[file];
+                }
+            }
+        });
     }
 
     applyCompilation(compilation) {
         if (!compilation.hooks.htmlWebpackPluginAlterAssetTags) {
             throw new Error('The expected HtmlWebpackPlugin hook was not found! Ensure HtmlWebpackPlugin is installed and was initialized before this plugin.');
         }
+
         compilation.hooks.htmlWebpackPluginAlterAssetTags.tapAsync(this.pluginName, (htmlPluginData, callback) => this.applyAlterAssetTags(compilation, htmlPluginData, callback));
     }
 

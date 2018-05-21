@@ -4,7 +4,7 @@ import { App } from '../App';
 import * as ReactRouterDOM from 'react-router-dom'
 
 export default ReactDOMServer.renderToString(
-    <ReactRouterDOM.StaticRouter location="/">
+    <ReactRouterDOM.StaticRouter location="/contact">
         <App />
     </ReactRouterDOM.StaticRouter>
 );

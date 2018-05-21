@@ -8,8 +8,8 @@ import './favicon-96x96.png';
 
 const container = document.getElementById('container');
 ReactDOM.render(
-    <ReactRouterDOM.HashRouter>
+    <ReactRouterDOM.BrowserRouter>
         <App />
-    </ReactRouterDOM.HashRouter>,
+    </ReactRouterDOM.BrowserRouter>,
     container
 );

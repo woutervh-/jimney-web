@@ -6,6 +6,7 @@ html {
 
 body {
     display: flex;
+    flex-direction: row-reverse;
     align-items: stretch;
     justify-content: center;
     flex-wrap: wrap;

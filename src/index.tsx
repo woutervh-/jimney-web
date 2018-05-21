@@ -7,9 +7,9 @@ import './favicon-32x32.png';
 import './favicon-96x96.png';
 
 const container = document.getElementById('container');
-ReactDOM.render(
-    <ReactRouterDOM.HashRouter>
+ReactDOM.hydrate(
+    <ReactRouterDOM.BrowserRouter>
         <App />
-    </ReactRouterDOM.HashRouter>,
+    </ReactRouterDOM.BrowserRouter>,
     container
 );

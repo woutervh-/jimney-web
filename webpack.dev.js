@@ -3,6 +3,7 @@ const merge = require('webpack-merge');
 const webpack = require('webpack');
 const common = require('./webpack.common.js');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = merge(common, {
     mode: 'development',
@@ -25,7 +26,11 @@ module.exports = merge(common, {
         }]
     },
     plugins: [
+        new webpack.DefinePlugin({
+            PRODUCTION: false
+        }),
         new webpack.HotModuleReplacementPlugin(),
+        new HtmlWebpackPlugin({ template: './src/index.html', chunks: ['bundle'], filename: 'index.html' }),
         new MiniCssExtractPlugin({
             filename: '[name].css',
             chunkFilename: '[id].css'

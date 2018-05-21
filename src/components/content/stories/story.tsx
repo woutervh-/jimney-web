@@ -22,10 +22,10 @@ export interface StoryProps {
 export class Story extends React.Component<StoryProps, never> {
     renderPreview() {
         if (this.props.preview.type === 'image') {
-            return <aside className="story-preview-image-container">
+            return <figure className="story-preview-image-container">
                 <img className="story-preview-image" src={this.props.preview.image} />
                 <div className="story-preview-image-caption">Coming soon</div>
-            </aside>;
+            </figure>;
         } else {
             return <aside>
                 <iframe

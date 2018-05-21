@@ -42,14 +42,14 @@ class HtmlWebpackStaticPlugin {
                 throw new Error('Missing location in plugin options.');
             }
 
+            const chunk = chunks.get(htmlPluginData.plugin.options.entry);
+            const jsFiles = chunk.files.filter((name) => name.endsWith('.js'));
+
             if (jsFiles.length <= 0) {
                 throw new Error('Chunk ' + JSON.stringify(htmlPluginData.plugin.options.entry) + ' has no output files.');
             } else if (jsFiles.length >= 2) {
                 throw new Error('Chunk ' + JSON.stringify(htmlPluginData.plugin.options.entry) + ' has multiple output files. I do not know how to deal with this.');
             }
-
-            const chunk = chunks.get(htmlPluginData.plugin.options.entry);
-            const jsFiles = chunk.files.filter((name) => name.endsWith('.js'));
 
             const dom = new jsdom.JSDOM('', { runScripts: 'outside-only' });
             dom.virtualConsole.sendTo(console);

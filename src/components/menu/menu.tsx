@@ -5,11 +5,11 @@ import './style.scss';
 export class Menu extends React.Component<{}, never> {
     render() {
         return <ul className="menu">
-            <li><ReactRouterDOM.Link className="menu-item" to="/">Home</ReactRouterDOM.Link></li>
-            <li><ReactRouterDOM.Link className="menu-item" to="/stories">Stories</ReactRouterDOM.Link></li>
-            <li><ReactRouterDOM.Link className="menu-item" to="/author">Author</ReactRouterDOM.Link></li>
-            <li><ReactRouterDOM.Link className="menu-item" to="/resources">Resources</ReactRouterDOM.Link></li>
-            <li><ReactRouterDOM.Link className="menu-item" to="/contact">Contact</ReactRouterDOM.Link></li>
+            <li><ReactRouterDOM.NavLink className="menu-item" exact to="/">Home</ReactRouterDOM.NavLink></li>
+            <li><ReactRouterDOM.NavLink className="menu-item" to="/stories/">Stories</ReactRouterDOM.NavLink></li>
+            <li><ReactRouterDOM.NavLink className="menu-item" to="/author/">Author</ReactRouterDOM.NavLink></li>
+            <li><ReactRouterDOM.NavLink className="menu-item" to="/resources/">Resources</ReactRouterDOM.NavLink></li>
+            <li><ReactRouterDOM.NavLink className="menu-item" to="/contact/">Contact</ReactRouterDOM.NavLink></li>
         </ul>;
     }
 }

@@ -15,7 +15,12 @@
     padding: 8px;
     text-transform: uppercase;
     background-color: #514aac;
-    &:hover {
+
+    &:hover, &.active, &:focus {
         background-color: lighten(#514aac, 20%);
+    }
+
+    &.active {
+        pointer-events: none;
     }
 }

@@ -9,34 +9,6 @@ export class Home extends React.Component<{}, never> {
             Home! This is the ultra deluxe.<br />
             Home! This is the ultra deluxe.<br />
             Home! This is the ultra deluxe.<br />
-            Home! This is the ultra deluxe.<br />
-            Home! This is the ultra deluxe.<br />
-            Home! This is the ultra deluxe.<br />
-            Home! This is the ultra deluxe.<br />
-            Home! This is the ultra deluxe.<br />
-            Home! This is the ultra deluxe.<br />
-            Home! This is the ultra deluxe.<br />
-            Home! This is the ultra deluxe.<br />
-            Home! This is the ultra deluxe.<br />
-            Home! This is the ultra deluxe.<br />
-            Home! This is the ultra deluxe.<br />
-            Home! This is the ultra deluxe.<br />
-            Home! This is the ultra deluxe.<br />
-            Home! This is the ultra deluxe.<br />
-            Home! This is the ultra deluxe.<br />
-            Home! This is the ultra deluxe.<br />
-            Home! This is the ultra deluxe.<br />
-            Home! This is the ultra deluxe.<br />
-            Home! This is the ultra deluxe.<br />
-            Home! This is the ultra deluxe.<br />
-            Home! This is the ultra deluxe.<br />
-            Home! This is the ultra deluxe.<br />
-            Home! This is the ultra deluxe.<br />
-            Home! This is the ultra deluxe.<br />
-            Home! This is the ultra deluxe.<br />
-            Home! This is the ultra deluxe.<br />
-            Home! This is the ultra deluxe.<br />
-            Home! This is the ultra deluxe.<br />
         </React.Fragment>;
     }
 }

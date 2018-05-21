@@ -4,10 +4,10 @@ import * as IanaImage from '../../../images/iana.png';
 
 export class Iana extends React.Component<{}, never> {
     renderDescription() {
-        return `
-        It is the year 4000.
-        A young synth is in pursuit of an artifact that will help prevent the impending apocalypse.
-        `;
+        return <React.Fragment>
+            <p>It is the year 4000.</p>
+            <p>A young synth is in pursuit of an artifact that will help prevent the impending apocalypse.</p>
+        </React.Fragment>;
     }
 
     render() {

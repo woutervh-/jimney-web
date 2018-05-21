@@ -4,9 +4,9 @@ import * as CatchingFirefliesImage from '../../../images/catching-fireflies.png'
 
 export class CatchingFireflies extends React.Component<{}, never> {
     renderDescription() {
-        return `
-        A young water genie has to convince his prey to join him in the depths.
-        `;
+        return <p>
+            A young water genie has to convince his prey to join him in the depths.
+        </p>;
     }
 
     render() {

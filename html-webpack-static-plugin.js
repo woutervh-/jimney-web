@@ -31,40 +31,46 @@ class HtmlWebpackStaticPlugin {
     }
 
     applyAlterAssetTags(compilation, htmlPluginData, callback) {
-        const chunks = compilation.getStats().compilation.namedChunks;
-        if (htmlPluginData.plugin.options.staticEntry) {
-            if (chunks.has(htmlPluginData.plugin.options.staticEntry)) {
-                const chunk = chunks.get(htmlPluginData.plugin.options.staticEntry);
-                const jsFiles = chunk.files.filter((name) => name.endsWith('.js'));
+        if (htmlPluginData.plugin.options.entry) {
+            const chunks = compilation.getStats().compilation.namedChunks;
 
-                if (jsFiles.length === 1) {
-                    const dom = new jsdom.JSDOM('', { runScripts: 'outside-only' });
-                    dom.virtualConsole.sendTo(console);
-                    const script = new vm.Script(compilation.assets[jsFiles[0]].source());
-                    dom.runVMScript(script);
-
-                    if (typeof dom.window.default === 'string') {
-                        htmlPluginData.body.unshift({
-                            tagName: 'div',
-                            closeTag: true,
-                            attributes: { id: 'container' },
-                            innerHTML: dom.window.default
-                        });
-                    } else {
-                        throw new Error('Chunk ' + JSON.stringify(htmlPluginData.plugin.options.staticEntry) + ' did not export a string.');
-                    }
-                } else if (jsFiles.length <= 0) {
-                    throw new Error('Chunk ' + JSON.stringify(htmlPluginData.plugin.options.staticEntry) + ' has no output files.');
-                } else {
-                    throw new Error('Chunk ' + JSON.stringify(htmlPluginData.plugin.options.staticEntry) + ' has multiple output files. I do not know how to deal with this.');
-                }
-
-                for (const file of chunk.files) {
-                    delete compilation.assets[file];
-                }
-            } else {
-                throw new Error('Chunk ' + JSON.stringify(htmlPluginData.plugin.options.staticEntry) + ' was not found. Make sure there is an entry with this name!');
+            if (!chunks.has(htmlPluginData.plugin.options.entry)) {
+                throw new Error('Chunk ' + JSON.stringify(htmlPluginData.plugin.options.entry) + ' was not found. Make sure there is an entry with this name!');
             }
+
+            if (typeof htmlPluginData.plugin.options.location !== 'string') {
+                throw new Error('Missing location in plugin options.');
+            }
+
+            if (jsFiles.length <= 0) {
+                throw new Error('Chunk ' + JSON.stringify(htmlPluginData.plugin.options.entry) + ' has no output files.');
+            } else if (jsFiles.length >= 2) {
+                throw new Error('Chunk ' + JSON.stringify(htmlPluginData.plugin.options.entry) + ' has multiple output files. I do not know how to deal with this.');
+            }
+
+            const chunk = chunks.get(htmlPluginData.plugin.options.entry);
+            const jsFiles = chunk.files.filter((name) => name.endsWith('.js'));
+
+            const dom = new jsdom.JSDOM('', { runScripts: 'outside-only' });
+            dom.virtualConsole.sendTo(console);
+            const script = new vm.Script(compilation.assets[jsFiles[0]].source());
+            dom.runVMScript(script);
+
+            if (typeof dom.window.default !== 'function') {
+                throw new Error('Chunk ' + JSON.stringify(htmlPluginData.plugin.options.entry) + ' did not export a function.');
+            }
+
+            const result = dom.window.default(htmlPluginData.plugin.options.location);
+            if (typeof result !== 'string') {
+                throw new Error('Chunk ' + JSON.stringify(htmlPluginData.plugin.options.entry) + ' returned a non-string.');
+            }
+
+            htmlPluginData.body.unshift({
+                tagName: 'div',
+                closeTag: true,
+                attributes: { id: 'container' },
+                innerHTML: result
+            });
         }
         callback();
     }

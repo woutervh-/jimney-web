@@ -35,10 +35,5 @@ module.exports = merge(common, {
             filename: '[name].css',
             chunkFilename: '[id].css'
         })
-    ],
-    externals: {
-        'react': 'React',
-        'react-dom': 'ReactDOM',
-        'react-router-dom': 'ReactRouterDOM'
-    }
+    ]
 });

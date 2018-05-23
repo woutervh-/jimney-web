@@ -1,3 +1,5 @@
+@import '../../shared.scss';
+
 .menu {
     list-style: none;
     margin: 0;
@@ -5,19 +7,19 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    background-color: #514aac;
+    background-color: $primary;
 }
 
 .menu-item {
+    color: $on-primary;
     display: block;
-    color: white;
     text-decoration: none;
     padding: 8px;
     text-transform: uppercase;
-    background-color: #514aac;
+    background-color: $primary;
 
     &:hover, &.active, &:focus {
-        background-color: lighten(#514aac, 20%);
+        background-color: lighten($primary, 20%);
     }
 
     &.active {

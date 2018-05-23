@@ -4,10 +4,11 @@ const common = require('./webpack.prod.common.js');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackStaticPlugin = require('./html-webpack-static-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const webpackHash = require('./webpack.hash');
 
 module.exports = merge(common, {
     entry: {
-        'static': './src/static.tsx'
+        static: './src/static.tsx'
     },
     output: {
         libraryTarget: 'umd'
@@ -27,7 +28,7 @@ module.exports = merge(common, {
             use: [{
                 loader: 'file-loader',
                 options: {
-                    name: 'images/[name].[ext]',
+                    name: `images/${webpackHash}.[ext]`,
                     emitFile: false
                 }
             }],
@@ -37,7 +38,7 @@ module.exports = merge(common, {
             use: [{
                 loader: 'file-loader',
                 options: {
-                    name: 'images/[name].[ext]',
+                    name: `images/[name].${webpackHash}.[ext]`,
                     emitFile: false
                 }
             }],
@@ -47,7 +48,6 @@ module.exports = merge(common, {
     plugins: [
         new HtmlWebpackPlugin({ template: './src/index.html', chunks: ['bundle'], entry: 'static', location: '/', filename: 'index.html' }),
         new HtmlWebpackPlugin({ template: './src/index.html', chunks: ['bundle'], entry: 'static', location: '/stories', filename: 'stories/index.html' }),
-        new HtmlWebpackPlugin({ template: './src/index.html', chunks: ['bundle'], entry: 'static', location: '/author', filename: 'author/index.html' }),
         new HtmlWebpackPlugin({ template: './src/index.html', chunks: ['bundle'], entry: 'static', location: '/contact', filename: 'contact/index.html' }),
         new HtmlWebpackPlugin({ template: './src/index.html', chunks: ['bundle'], entry: 'static', location: '/resources', filename: 'resources/index.html' }),
         new HtmlWebpackStaticPlugin()

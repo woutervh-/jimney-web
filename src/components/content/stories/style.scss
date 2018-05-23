@@ -14,8 +14,8 @@
     padding: 12px;
     flex-basis: 45%;
     flex-grow: 1;
-    background-color: rgba(#514aac, 0.1);
-    box-shadow: 0 0 2px rgba(#514aac, 0.6);
+    background-color: $surface;
+    box-shadow: 0 0 1px darken($surface, 30%);
 
     @include small {
         display: flex;
@@ -39,14 +39,15 @@
 .story-preview-image {
     width: 236px;
     margin-top: 6px;
-    box-shadow: 0 0 2px #514aac;
+    box-shadow: 0 0 2px $primary;
 }
 
 .story-preview-image-caption {
     text-transform: uppercase;
-    background-color: #f5f5f6;
+    background-color: $primary;
+    color: $on-primary;
     text-align: center;
-    box-shadow: 0 0 2px #514aac inset;
+    box-shadow: 0 0 2px $primary;
 }
 
 .story-preview-amazon {

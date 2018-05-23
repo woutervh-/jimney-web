@@ -2,13 +2,14 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackStaticPlugin = require('./html-webpack-static-plugin');
+const webpackHash = require('./webpack.hash');
 
 module.exports = {
     entry: {
-        'bundle': './src/index.tsx'
+        bundle: './src/index.tsx'
     },
     output: {
-        filename: '[name].js',
+        filename: `[name].${webpackHash}.js`,
         path: path.resolve(__dirname, 'dist'),
         publicPath: '/'
     },

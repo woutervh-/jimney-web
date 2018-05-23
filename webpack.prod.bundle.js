@@ -3,6 +3,7 @@ const merge = require('webpack-merge');
 const common = require('./webpack.prod.common.js');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const webpackHash = require('./webpack.hash');
 
 module.exports = merge(common, {
     optimization: {
@@ -28,7 +29,7 @@ module.exports = merge(common, {
             use: [{
                 loader: 'file-loader',
                 options: {
-                    name: 'images/[name].[ext]'
+                    name: `images/[name].${webpackHash}.[ext]`
                 }
             }],
             include: [path.resolve(__dirname, 'src/images')]
@@ -37,7 +38,7 @@ module.exports = merge(common, {
             use: [{
                 loader: 'file-loader',
                 options: {
-                    name: 'images/[name].[ext]'
+                    name: `images/[name].${webpackHash}.[ext]`
                 }
             }, {
                 loader: 'svgo-loader'

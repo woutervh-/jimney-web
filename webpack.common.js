@@ -32,6 +32,9 @@ module.exports = {
         }]
     },
     resolve: {
-        extensions: ['.tsx', '.ts', '.js']
+        extensions: ['.tsx', '.ts', '.js'],
+        alias: {
+            images: path.resolve(__dirname, './src/images/')
+        }
     }
 };

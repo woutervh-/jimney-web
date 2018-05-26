@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Story } from './story';
-import * as ElegyOfTheStarsImage from '../../../images/elegy-of-the-stars.jpg';
+import * as ElegyOfTheStarsImage from 'images/elegy-of-the-stars.png?size=236';
 
 export class ElegyOfTheStars extends React.Component<{}, never> {
     renderDescription() {

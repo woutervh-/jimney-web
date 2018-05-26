@@ -25,11 +25,11 @@ module.exports = merge(common, {
                 }
             }]
         }, {
-            test: /\.(png|jpg)$/,
+            test: /\.(jpe?g|png)$/,
             use: [{
-                loader: 'file-loader',
+                loader: 'responsive-loader',
                 options: {
-                    name: `images/[name].${webpackHash}.[ext]`
+                    name: `images/[name]-[width].${webpackHash}.[ext]`
                 }
             }],
             include: [path.resolve(__dirname, 'src/images')]

@@ -18,7 +18,16 @@ module.exports = merge(common, {
                 }
             }]
         }, {
-            test: /\.(png|svg|jpg)$/,
+            test: /\.(jpe?g|png)$/,
+            use: [{
+                loader: 'responsive-loader',
+                options: {
+                    name: 'images/[name]-[width].[ext]'
+                }
+            }],
+            include: [path.resolve(__dirname, 'src/images')]
+        }, {
+            test: /\.svg$/,
             use: [{
                 loader: 'url-loader'
             }],

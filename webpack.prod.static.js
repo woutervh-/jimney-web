@@ -6,6 +6,20 @@ const HtmlWebpackStaticPlugin = require('./html-webpack-static-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const webpackHash = require('./webpack.hash');
 
+const additionalTags = [{
+    tagName: 'script',
+    closeTag: true,
+    attributes: { src: 'https://cdnjs.cloudflare.com/ajax/libs/react/16.3.2/umd/react.production.min.js' }
+}, {
+    tagName: 'script',
+    closeTag: true,
+    attributes: { src: 'https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.3.2/umd/react-dom.production.min.js' }
+}, {
+    tagName: 'script',
+    closeTag: true,
+    attributes: { src: 'https://cdnjs.cloudflare.com/ajax/libs/react-router-dom/4.2.2/react-router-dom.min.js' }
+}];
+
 module.exports = merge(common, {
     entry: {
         static: './src/static.tsx'
@@ -45,10 +59,10 @@ module.exports = merge(common, {
         }]
     },
     plugins: [
-        new HtmlWebpackPlugin({ template: './src/index.html', chunks: ['bundle'], entry: 'static', location: '/', filename: 'index.html' }),
-        new HtmlWebpackPlugin({ template: './src/index.html', chunks: ['bundle'], entry: 'static', location: '/stories', filename: 'stories/index.html' }),
-        new HtmlWebpackPlugin({ template: './src/index.html', chunks: ['bundle'], entry: 'static', location: '/contact', filename: 'contact/index.html' }),
-        new HtmlWebpackPlugin({ template: './src/index.html', chunks: ['bundle'], entry: 'static', location: '/resources', filename: 'resources/index.html' }),
+        new HtmlWebpackPlugin({ template: './src/index.html', chunks: ['bundle'], entry: 'static', additionalTags, location: '/', filename: 'index.html' }),
+        new HtmlWebpackPlugin({ template: './src/index.html', chunks: ['bundle'], entry: 'static', additionalTags, location: '/stories', filename: 'stories/index.html' }),
+        new HtmlWebpackPlugin({ template: './src/index.html', chunks: ['bundle'], entry: 'static', additionalTags, location: '/contact', filename: 'contact/index.html' }),
+        new HtmlWebpackPlugin({ template: './src/index.html', chunks: ['bundle'], entry: 'static', additionalTags, location: '/resources', filename: 'resources/index.html' }),
         new HtmlWebpackStaticPlugin()
     ]
 });

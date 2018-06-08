@@ -31,6 +31,12 @@ class HtmlWebpackStaticPlugin {
     }
 
     applyAlterAssetTags(compilation, htmlPluginData, callback) {
+        if (htmlPluginData.plugin.options.additionalTags) {
+            for (const additionalTag of htmlPluginData.plugin.options.additionalTags.slice().reverse()) {
+                htmlPluginData.body.unshift(additionalTag);
+            }
+        }
+
         if (htmlPluginData.plugin.options.entry) {
             const chunks = compilation.getStats().compilation.namedChunks;
 

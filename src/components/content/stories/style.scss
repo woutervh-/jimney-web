@@ -14,6 +14,7 @@
     padding: 12px;
     flex-basis: 45%;
     flex-grow: 1;
+    overflow-x: auto;
     background-color: $surface;
     box-shadow: 0 0 1px darken($surface, 30%);
 

@@ -3,69 +3,28 @@
 .stories-container {
     display: flex;
     flex-wrap: wrap;
-    // Use negative margin and margin on child elements until row/column gap is possible
-    // https://www.w3.org/TR/css-align-3/
-    // https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Mastering_Wrapping_of_Flex_Items#Creating_gutters_between_items
-    margin: -10px;
-}
-
-.story {
-    margin: 10px;
-    padding: 12px;
-    flex-basis: 45%;
-    flex-grow: 1;
-    overflow-x: auto;
     background-color: $surface;
-    box-shadow: 0 0 1px darken($surface, 30%);
-
-    @include small {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
 }
 
-.story-preview-image-container {
+.story-image-container {
     display: block;
-    margin-right: 8px;
-    margin-bottom: 8px;
-    margin-top: 36px;
-    float: left;
-    
-    @include small {
-        margin: 8px;
-    }
 }
 
-.story-preview-image {
+.story-image-crop {
     width: 236px;
-    margin-top: 6px;
+    height: 236px;
+    overflow: hidden;
+}
+
+.story-image {
+    width: 236px;
     box-shadow: 0 0 2px $primary;
 }
 
-.story-preview-image-caption {
+.story-image-caption {
     text-transform: uppercase;
     background-color: $primary;
     color: $on-primary;
     text-align: center;
     box-shadow: 0 0 2px $primary;
-}
-
-.story-preview-amazon {
-    display: block;
-    margin-right: 8px;
-    margin-bottom: 8px;
-    margin-top: 36px;
-    width: 250px;
-    height: 418px;
-    float: left;
-    
-    @include small {
-        margin: 8px;
-    }
-}
-
-.story-title {
-    margin: 20px 0;
-    text-align: center;
 }

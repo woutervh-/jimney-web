@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Story } from './story';
+import * as IanaImage from 'images/iana.png?size=236';
 
 export class Iana extends React.Component<{}, never> {
     renderDescription() {
@@ -12,7 +13,8 @@ export class Iana extends React.Component<{}, never> {
     render() {
         return <Story
             title="Iana"
-            preview={{ type: 'amazon', asin: 'B01H5RDWUU', ref: 'cm_sw_r_kb_dp_Y709AbXHQT5BD' }}
+            image={IanaImage}
+            imageOffsetY={0}
             description={this.renderDescription()}
         />;
     }

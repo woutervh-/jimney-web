@@ -1,51 +1,21 @@
 import * as React from 'react';
 
-export interface PreviewImage {
-    type: 'image';
-    image: string;
-}
-
-export interface PreviewAmazon {
-    type: 'amazon';
-    asin: string;
-    ref: string;
-}
-
-export type Preview = PreviewImage | PreviewAmazon;
-
 export interface StoryProps {
-    preview: Preview;
+    image: string;
+    imageOffsetY: number;
     title: string;
     description: React.ReactNode;
 }
 
 export class Story extends React.Component<StoryProps, never> {
-    renderPreview() {
-        if (this.props.preview.type === 'image') {
-            return <figure className="story-preview-image-container">
-                <img className="story-preview-image" src={this.props.preview.image} width={236} />
-                <div className="story-preview-image-caption">Coming soon</div>
-            </figure>;
-        } else {
-            return <aside>
-                <iframe
-                    frameBorder={0}
-                    allowFullScreen
-                    className="story-preview-amazon"
-                    // style={{ maxWidth: '100%' }}
-                    src={`https://read.amazon.com/kp/card?asin=${this.props.preview.asin}&preview=newtab&linkCode=kpe&ref_=${this.props.preview.ref}`}
-                />
-            </aside>;
-        }
-    }
-
     render() {
-        return <article className="story">
-            {this.renderPreview()}
-            <header>
-                <h3 className="story-title">{this.props.title}</h3>
-            </header>
-            {this.props.description}
+        return <article>
+            <figure className="story-image-container">
+                <div className="story-image-crop">
+                    <img className="story-image" style={{ marginTop: -this.props.imageOffsetY }} src={this.props.image} width={236} />
+                </div>
+                <div className="story-image-caption">Coming soon</div>
+            </figure>
         </article>;
     }
 }

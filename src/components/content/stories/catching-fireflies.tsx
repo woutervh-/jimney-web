@@ -12,7 +12,8 @@ export class CatchingFireflies extends React.Component<{}, never> {
     render() {
         return <Story
             title="Catching Fireflies"
-            preview={{ type: 'amazon', asin: 'B01H5RDX0Y', ref: 'cm_sw_r_kb_dp_O609AbD3RZWKX' }}
+            image={CatchingFirefliesImage}
+            imageOffsetY={0}
             description={this.renderDescription()}
         />;
     }

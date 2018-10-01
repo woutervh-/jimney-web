@@ -12,7 +12,8 @@ export class TheHungryWorlds extends React.Component<{}, never> {
     render() {
         return <Story
             title="The Hungry Worlds"
-            preview={{ type: 'amazon', asin: 'B01H5993E2', ref: 'cm_sw_r_kb_dp_J809Ab6SSV5Z8' }}
+            image={TheHungryWorldsImage}
+            imageOffsetY={0}
             description={this.renderDescription()}
         />;
     }

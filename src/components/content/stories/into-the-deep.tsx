@@ -12,7 +12,8 @@ export class IntoTheDeep extends React.Component<{}, never> {
     render() {
         return <Story
             title="Into the Deep"
-            preview={{ type: 'image', image: IntoTheDeepImage }}
+            image={IntoTheDeepImage}
+            imageOffsetY={0}
             description={this.renderDescription()}
         />;
     }

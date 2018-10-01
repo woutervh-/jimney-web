@@ -59,10 +59,19 @@ module.exports = merge(common, {
         }]
     },
     plugins: [
-        new HtmlWebpackPlugin({ template: './src/index.html', chunks: ['bundle'], entry: 'static', additionalTags, location: '/', filename: 'index.html' }),
-        new HtmlWebpackPlugin({ template: './src/index.html', chunks: ['bundle'], entry: 'static', additionalTags, location: '/stories', filename: 'stories/index.html' }),
-        new HtmlWebpackPlugin({ template: './src/index.html', chunks: ['bundle'], entry: 'static', additionalTags, location: '/contact', filename: 'contact/index.html' }),
-        new HtmlWebpackPlugin({ template: './src/index.html', chunks: ['bundle'], entry: 'static', additionalTags, location: '/resources', filename: 'resources/index.html' }),
+        new HtmlWebpackPlugin({ template: './src/index.html', chunks: ['bundle'], entry: 'static', location: '/', filename: 'index.html' }),
+        new HtmlWebpackPlugin({ template: './src/index.html', chunks: ['bundle'], entry: 'static', location: '/stories', filename: 'stories/index.html' }),
+        new HtmlWebpackPlugin({ template: './src/index.html', chunks: ['bundle'], entry: 'static', location: '/contact', filename: 'contact/index.html' }),
+        new HtmlWebpackPlugin({ template: './src/index.html', chunks: ['bundle'], entry: 'static', location: '/resources', filename: 'resources/index.html' }),
+        new HtmlWebpackPlugin({ template: './src/index.html', chunks: ['bundle'], entry: 'static', location: '/read/elegy-of-the-stars', filename: 'read/elegy-of-the-stars/index.html' }),
+        new HtmlWebpackPlugin({ template: './src/index.html', chunks: ['bundle'], entry: 'static', location: '/read/elegy-of-the-stars/2', filename: 'read/elegy-of-the-stars/2/index.html' }),
+        new HtmlWebpackPlugin({ template: './src/index.html', chunks: ['bundle'], entry: 'static', location: '/read/elegy-of-the-stars/3', filename: 'read/elegy-of-the-stars/3/index.html' }),
+        new HtmlWebpackPlugin({ template: './src/index.html', chunks: ['bundle'], entry: 'static', location: '/read/elegy-of-the-stars/4', filename: 'read/elegy-of-the-stars/4/index.html' }),
+        new HtmlWebpackPlugin({ template: './src/index.html', chunks: ['bundle'], entry: 'static', location: '/read/elegy-of-the-stars/5', filename: 'read/elegy-of-the-stars/5/index.html' }),
+        new HtmlWebpackPlugin({ template: './src/index.html', chunks: ['bundle'], entry: 'static', location: '/read/elegy-of-the-stars/6', filename: 'read/elegy-of-the-stars/6/index.html' }),
+        new HtmlWebpackPlugin({ template: './src/index.html', chunks: ['bundle'], entry: 'static', location: '/read/elegy-of-the-stars/7', filename: 'read/elegy-of-the-stars/7/index.html' }),
+        new HtmlWebpackPlugin({ template: './src/index.html', chunks: ['bundle'], entry: 'static', location: '/read/elegy-of-the-stars/8', filename: 'read/elegy-of-the-stars/8/index.html' }),
+        new HtmlWebpackPlugin({ template: './src/index.html', chunks: ['bundle'], entry: 'static', location: '/read/elegy-of-the-stars/epilogue', filename: 'read/elegy-of-the-stars/epilogue/index.html' }),
         new HtmlWebpackStaticPlugin()
     ]
 });

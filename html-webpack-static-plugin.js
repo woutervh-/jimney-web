@@ -71,6 +71,7 @@ class HtmlWebpackStaticPlugin {
                 throw new Error('Chunk ' + JSON.stringify(htmlPluginData.plugin.options.entry) + ' returned a non-string.');
             }
 
+            htmlPluginData.body = htmlPluginData.body.filter((tags) => tags.tagName !== 'script');
             htmlPluginData.body.unshift({
                 tagName: 'div',
                 closeTag: true,

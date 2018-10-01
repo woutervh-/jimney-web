@@ -14,6 +14,7 @@ export class IntoTheDeep extends React.Component<{}, never> {
             title="Into the Deep"
             preview={{ type: 'image', image: IntoTheDeepImage }}
             description={this.renderDescription()}
+            caption={{ type: 'coming-soon' }}
         />;
     }
 }

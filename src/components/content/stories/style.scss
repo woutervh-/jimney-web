@@ -39,6 +39,7 @@
 
 .story-preview-image {
     width: 236px;
+    min-height: 376px;
     margin-top: 6px;
     box-shadow: 0 0 2px $primary;
 }
@@ -46,9 +47,12 @@
 .story-preview-image-caption {
     text-transform: uppercase;
     background-color: $primary;
-    color: $on-primary;
     text-align: center;
     box-shadow: 0 0 2px $primary;
+}
+
+.story-preview-image-caption, .story-preview-image-caption a {
+    color: $on-primary;
 }
 
 .story-preview-amazon {

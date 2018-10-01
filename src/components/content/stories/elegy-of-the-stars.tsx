@@ -16,6 +16,7 @@ export class ElegyOfTheStars extends React.Component<{}, never> {
             title="Elegy of the Stars"
             preview={{ type: 'image', image: ElegyOfTheStarsImage }}
             description={this.renderDescription()}
+            caption={{ type: 'read-more', text: 'Read more', link: '/read/elegy-of-the-stars' }}
         />;
     }
 }

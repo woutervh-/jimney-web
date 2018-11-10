@@ -6,7 +6,7 @@
 import * as React from 'react';
 import * as ReactRouterDOM from 'react-router-dom';
 
-export class Chapter6 extends React.Component<{}, never> {
+export class Chapter6 extends React.PureComponent<{}, never> {
     render() {
         return <div>
             <div style={{ textAlign: 'center' }}><p><b>VI</b></p></div>

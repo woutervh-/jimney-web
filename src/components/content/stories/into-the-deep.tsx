@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Story } from './story';
 import * as IntoTheDeepImage from 'images/into-the-deep.png?size=236';
 
-export class IntoTheDeep extends React.Component<{}, never> {
+export class IntoTheDeep extends React.PureComponent<{}, never> {
     renderDescription() {
         return <React.Fragment>
             <p>Description</p>

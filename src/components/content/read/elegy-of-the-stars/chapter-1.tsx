@@ -6,7 +6,7 @@
 import * as React from 'react';
 import * as ReactRouterDOM from 'react-router-dom';
 
-export class Chapter1 extends React.Component<{}, never> {
+export class Chapter1 extends React.PureComponent<{}, never> {
     render() {
         return <div>
             <h1 style={{ textAlign: 'center' }}>Elegy of the Stars</h1>

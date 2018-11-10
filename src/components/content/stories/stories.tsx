@@ -6,7 +6,7 @@ import { Iana } from './iana';
 import { TheHungryWorlds } from './the-hungry-worlds';
 import { IntoTheDeep } from './into-the-deep';
 
-export class Stories extends React.Component<{}, never> {
+export class Stories extends React.PureComponent<{}, never> {
     render() {
         return <div className="stories-container">
             <ElegyOfTheStars />

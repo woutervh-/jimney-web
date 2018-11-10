@@ -10,7 +10,7 @@ import { Chapter7 } from './chapter-7';
 import { Chapter8 } from './chapter-8';
 import { Epilogue } from './epilogue';
 
-export class ElegyOfTheStars extends React.Component<{}, never> {
+export class ElegyOfTheStars extends React.PureComponent<{}, never> {
     render() {
         return <React.Fragment>
             <ReactRouterDOM.Route exact path="/read/elegy-of-the-stars" component={Chapter1} />

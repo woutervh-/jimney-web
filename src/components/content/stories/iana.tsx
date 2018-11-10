@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Story } from './story';
 
-export class Iana extends React.Component<{}, never> {
+export class Iana extends React.PureComponent<{}, never> {
     renderDescription() {
         return <React.Fragment>
             <p>It is the year 4000.</p>

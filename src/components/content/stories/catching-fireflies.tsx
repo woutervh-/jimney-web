@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Story } from './story';
 import * as CatchingFirefliesImage from '../../../images/catching-fireflies.png';
 
-export class CatchingFireflies extends React.Component<{}, never> {
+export class CatchingFireflies extends React.PureComponent<{}, never> {
     renderDescription() {
         return <p>
             A young water genie has to convince his prey to join him in the depths.

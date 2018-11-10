@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-export class Author extends React.Component<{}, never> {
+export class Author extends React.PureComponent<{}, never> {
     render() {
         return <React.Fragment>
             <p>Hi there!</p>

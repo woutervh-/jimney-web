@@ -5,7 +5,7 @@
 
 import * as React from 'react';
 
-export class Epilogue extends React.Component<{}, never> {
+export class Epilogue extends React.PureComponent<{}, never> {
     render() {
         return <div>
             <div style={{ textAlign: 'center' }}><p><b>EPILOGUE</b></p></div>

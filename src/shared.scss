@@ -5,13 +5,11 @@
 }
 
 $primary: #514aac;
+$secondary: #11808f;
 $primary-variant: #000063;
 $on-primary: white;
-
-$secondary: #11808f;
-
 $background: #f5f5f6;
 $on-background: black;
-
 $surface: lighten($primary, 45%);
 $on-surface: black;
+$error-color: red;

@@ -63,6 +63,7 @@ module.exports = merge(common, {
         new HtmlWebpackPlugin({ template: './src/index.html', chunks: ['bundle'], entry: 'static', location: '/stories', filename: 'stories/index.html' }),
         new HtmlWebpackPlugin({ template: './src/index.html', chunks: ['bundle'], entry: 'static', location: '/contact', filename: 'contact/index.html' }),
         new HtmlWebpackPlugin({ template: './src/index.html', chunks: ['bundle'], entry: 'static', location: '/resources', filename: 'resources/index.html' }),
+        new HtmlWebpackPlugin({ template: './src/index.html', chunks: ['bundle'], entry: 'static', location: '/blog', filename: 'blog/index.html' }),
         new HtmlWebpackPlugin({ template: './src/index.html', chunks: ['bundle'], entry: 'static', location: '/read/elegy-of-the-stars', filename: 'read/elegy-of-the-stars/index.html' }),
         new HtmlWebpackPlugin({ template: './src/index.html', chunks: ['bundle'], entry: 'static', location: '/read/elegy-of-the-stars/2', filename: 'read/elegy-of-the-stars/2/index.html' }),
         new HtmlWebpackPlugin({ template: './src/index.html', chunks: ['bundle'], entry: 'static', location: '/read/elegy-of-the-stars/3', filename: 'read/elegy-of-the-stars/3/index.html' }),

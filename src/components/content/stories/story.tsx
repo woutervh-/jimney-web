@@ -33,7 +33,7 @@ export interface StoryProps {
     caption?: Caption;
 }
 
-export class Story extends React.Component<StoryProps, never> {
+export class Story extends React.PureComponent<StoryProps, never> {
     renderCaption() {
         if (this.props.caption) {
             if (this.props.caption.type === 'coming-soon') {

@@ -6,10 +6,9 @@ class BlogApi {
     private postsDocumentCache: Promise<Entry[]> | undefined = undefined;
 
     getPosts() {
-        // TODO: replace by actual URL
         this.referenceCounter += 1;
         if (this.postsDocumentCache === undefined) {
-            this.postsDocumentCache = fetch('https://cors-anywhere.herokuapp.com/https://jmtrent.blogspot.com/feeds/posts/default?max-results=5')
+            this.postsDocumentCache = fetch('/feeds/posts/default?max-results=10')
                 .then((response) => {
                     if (response.status < 200 || 300 <= response.status) {
                         throw new Error('Status was not OK.');

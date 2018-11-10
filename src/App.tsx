@@ -6,7 +6,6 @@ import { Stories } from './components/content/stories/stories';
 import { Author } from './components/content/author/author';
 import { Contact } from './components/content/contact/contact';
 import { Resources } from './components/content/resources/resources';
-import { Read } from './components/content/read/read';
 import { Blog } from './components/content/blog/blog';
 import { SideBar } from './components/side-bar/side-bar';
 import { BlogSideBar } from './components/side-bar/blog/blog-side-bar';
@@ -30,7 +29,6 @@ export class App extends React.PureComponent<{}, never> {
                     <ReactRouterDOM.Route path="/contact-thanks" component={ContactThanks} />
                     <ReactRouterDOM.Route path="/resources" component={Resources} />
                     <ReactRouterDOM.Route path="/blog" component={Blog} />
-                    <ReactRouterDOM.Route path="/read" component={Read} />
                 </main>
                 <aside className="content-aside">
                     <ReactRouterDOM.Route path="/blog" component={BlogSideBar} />

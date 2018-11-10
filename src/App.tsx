@@ -24,8 +24,8 @@ export class App extends React.PureComponent<{}, never> {
             </header>
             <section className="content">
                 <main className="content-main">
-                    <ReactRouterDOM.Route exact path="/" component={Author} />
-                    <ReactRouterDOM.Route path="/stories" component={Stories} />
+                    <ReactRouterDOM.Route exact path="/" component={Stories} />
+                    <ReactRouterDOM.Route path="/author" component={Author} />
                     <ReactRouterDOM.Route path="/contact" component={Contact} />
                     <ReactRouterDOM.Route path="/contact-thanks" component={ContactThanks} />
                     <ReactRouterDOM.Route path="/resources" component={Resources} />

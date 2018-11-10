@@ -3,8 +3,7 @@ import * as React from 'react';
 export class Author extends React.PureComponent<{}, never> {
     render() {
         return <React.Fragment>
-            <p>Hi there!</p>
-            <p>My name is Jasmin and I am a writer of YA fantasy and light sci-fi. I was born in Graz, Austria, on the 8th of December 1990, but I now live in the Netherlands. I started writing stories at say age 10 (probably less than) and have completed (writing AND editing) several tens of short stories and two novels and am working on the third. Of course, there is a lot of material that will never see the light of day, too.</p>
+            <p>Jasmin Gelinck is the author of two novels and several short stories in sci-fi and fantasy. Jasmin was born in Austria, but currently lives in the Netherlands, where she writes, plays video games, and reads too many books.</p>
         </React.Fragment>;
     }
 }

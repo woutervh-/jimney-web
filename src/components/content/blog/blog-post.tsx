@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Entry } from './convert-document';
+import { Entry } from '../../../api/blog-convert-document';
 import './style.scss';
 
 interface BlogPostProps extends Entry { }
@@ -7,7 +7,7 @@ interface BlogPostProps extends Entry { }
 export class BlogPost extends React.PureComponent<BlogPostProps, never> {
     renderContent() {
         if (this.props.content) {
-            return <p dangerouslySetInnerHTML={{ __html: this.props.content.content }} className="blog-text" />;
+            return <p dangerouslySetInnerHTML={{ __html: this.props.content.content }} />;
         }
     }
 

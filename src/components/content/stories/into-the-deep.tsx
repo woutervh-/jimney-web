@@ -5,7 +5,11 @@ import * as IntoTheDeepImage from 'images/into-the-deep.png?size=236';
 export class IntoTheDeep extends React.PureComponent<{}, never> {
     renderDescription() {
         return <React.Fragment>
-            <p>Description</p>
+            <p>An anthology of short stories taking place deep down under the waves.</p>
+            <p>Includes:</p>
+            <p>· Catching Firelies</p>
+            <p>· Out of the Depths</p>
+            <p>Release date: coming soon!</p>
         </React.Fragment>;
     }
 

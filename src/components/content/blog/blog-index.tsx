@@ -16,7 +16,7 @@ export class BlogIndex extends React.PureComponent<BlogIndexProps, never> {
                 </div>;
             })}
             <p className="blog-index-hint">
-                Want to read more? <a href="https://jmtrent.blogspot.com/" target="_blank">Visit my blog here.</a>
+                Want to read more? <a href="https://jasmingelinckauthor.blogspot.com/" target="_blank">Visit my blog here.</a>
             </p>
         </div>;
     }

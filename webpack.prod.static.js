@@ -16,7 +16,7 @@ const additionalTags = [{
 }, {
     tagName: 'script',
     closeTag: true,
-    attributes: { src: 'https://cdnjs.cloudflare.com/ajax/libs/react-router-dom/4.2.2/react-router-dom.min.js' }
+    attributes: { src: 'https://cdnjs.cloudflare.com/ajax/libs/react-router-dom/4.3.1/react-router-dom.min.js' }
 }];
 
 module.exports = merge(common, {

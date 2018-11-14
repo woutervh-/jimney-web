@@ -2,7 +2,7 @@ import * as React from 'react';
 import * as ReactRouterDOM from 'react-router-dom';
 import './style.scss';
 
-export class Menu extends React.PureComponent<{}, never> {
+export class Menu extends React.Component<{}, never> {
     render() {
         return <ul className="menu">
             <li><ReactRouterDOM.NavLink className="menu-item" exact to="/">Stories</ReactRouterDOM.NavLink></li>

@@ -12,7 +12,7 @@ import { BlogSideBar } from './components/side-bar/blog/blog-side-bar';
 import { ContactThanks } from './components/content/contact/contact-thanks';
 import './style.scss';
 
-export class App extends React.PureComponent<{}, never> {
+export class App extends React.Component<{}, never> {
     render() {
         return <React.Fragment>
             <header>

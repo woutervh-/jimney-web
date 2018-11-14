@@ -16,7 +16,7 @@ export class BlogPost extends React.PureComponent<BlogPostProps, never> {
         if (alternateLink !== undefined) {
             return <a href={alternateLink.href} target="_blank">View on Blogspot</a>;
         } else {
-            return <a href="https://jmtrent.blogspot.com" target="_blank">View on Blogspot</a>
+            return <a href="https://jasmingelinckauthor.blogspot.com" target="_blank">View on Blogspot</a>
         }
     }
 

@@ -39,7 +39,7 @@ export class Blog extends React.PureComponent<{}, BlogState> {
             </div>
             <noscript>
                 This page requires JavaScript to be enabled.
-                If this is not an option for you, please visit my blog directly: <a href="https://jmtrent.blogspot.com/" target="_blank">on Blogspot</a>.
+                If this is not an option for you, please visit my blog directly: <a href="https://jasmingelinckauthor.blogspot.com/" target="_blank">on Blogspot</a>.
             </noscript>
         </React.Fragment>;
     }
@@ -52,7 +52,7 @@ export class Blog extends React.PureComponent<{}, BlogState> {
                 {error.message}
             </div>
             <div>
-                If it keeps happening, please inform me of this error, and in the meantime visit my blog directly: <a href="https://jmtrent.blogspot.com/" target="_blank">on Blogspot</a>.
+                If it keeps happening, please inform me of this error, and in the meantime visit my blog directly: <a href="https://jasmingelinckauthor.blogspot.com/" target="_blank">on Blogspot</a>.
             </div>
         </React.Fragment>;
     }

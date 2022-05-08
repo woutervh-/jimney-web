@@ -1,5 +1,6 @@
 const jsdom = require('jsdom');
 const vm = require('vm');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 class HtmlWebpackStaticPlugin {
     constructor(options) {
@@ -7,8 +8,8 @@ class HtmlWebpackStaticPlugin {
     }
 
     apply(compiler) {
-        if (compiler.options.output.libraryTarget !== 'umd') {
-            throw new Error('This plugin currently only supports "umd" for output.libraryTarget. If you would like to see any of the targets from https://webpack.js.org/configuration/output/#output-librarytarget supported, please open an issue.');
+        if (compiler.options.output.library.type !== 'umd') {
+            throw new Error('This plugin currently only supports "umd" for output.library.type. If you would like to see any of the targets from https://webpack.js.org/configuration/output/#output-librarytarget supported, please open an issue.');
         }
 
         compiler.hooks.compilation.tap(this.pluginName, (compilation) => this.applyCompilation(compilation));
@@ -23,17 +24,17 @@ class HtmlWebpackStaticPlugin {
     }
 
     applyCompilation(compilation) {
-        if (!compilation.hooks.htmlWebpackPluginAlterAssetTags) {
+        if (!HtmlWebpackPlugin.getHooks(compilation).alterAssetTags) {
             throw new Error('The expected HtmlWebpackPlugin hook was not found! Ensure HtmlWebpackPlugin is installed and was initialized before this plugin.');
         }
 
-        compilation.hooks.htmlWebpackPluginAlterAssetTags.tapAsync(this.pluginName, (htmlPluginData, callback) => this.applyAlterAssetTags(compilation, htmlPluginData, callback));
+        HtmlWebpackPlugin.getHooks(compilation).alterAssetTagGroups.tapAsync(this.pluginName, (htmlPluginData, callback) => this.applyAlterAssetTagGroups(compilation, htmlPluginData, callback));
     }
 
-    applyAlterAssetTags(compilation, htmlPluginData, callback) {
+    applyAlterAssetTagGroups(compilation, htmlPluginData, callback) {
         if (htmlPluginData.plugin.options.additionalTags) {
             for (const additionalTag of htmlPluginData.plugin.options.additionalTags.slice().reverse()) {
-                htmlPluginData.body.unshift(additionalTag);
+                htmlPluginData.headTags.unshift(additionalTag);
             }
         }
 
@@ -71,7 +72,7 @@ class HtmlWebpackStaticPlugin {
                 throw new Error('Chunk ' + JSON.stringify(htmlPluginData.plugin.options.entry) + ' returned a non-string.');
             }
 
-            htmlPluginData.body.unshift({
+            htmlPluginData.bodyTags.unshift({
                 tagName: 'div',
                 closeTag: true,
                 attributes: { id: 'container' },

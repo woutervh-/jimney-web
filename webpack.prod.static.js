@@ -1,5 +1,5 @@
 const path = require('path');
-const merge = require('webpack-merge');
+const { merge } = require('webpack-merge');
 const common = require('./webpack.prod.common.js');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackStaticPlugin = require('./html-webpack-static-plugin');
@@ -8,15 +8,23 @@ const webpackHash = require('./webpack.hash');
 const additionalTags = [{
     tagName: 'script',
     closeTag: true,
-    attributes: { src: 'https://cdnjs.cloudflare.com/ajax/libs/react/16.3.2/umd/react.production.min.js' }
+    attributes: { src: 'https://cdnjs.cloudflare.com/ajax/libs/react/17.0.2/umd/react.production.min.js' }
 }, {
     tagName: 'script',
     closeTag: true,
-    attributes: { src: 'https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.3.2/umd/react-dom.production.min.js' }
+    attributes: { src: 'https://cdnjs.cloudflare.com/ajax/libs/react-dom/17.0.2/umd/react-dom.production.min.js' }
 }, {
     tagName: 'script',
     closeTag: true,
-    attributes: { src: 'https://cdnjs.cloudflare.com/ajax/libs/react-router-dom/4.3.1/react-router-dom.min.js' }
+    attributes: { src: 'https://cdnjs.cloudflare.com/ajax/libs/history/5.3.0/history.production.min.js' }
+}, {
+    tagName: 'script',
+    closeTag: true,
+    attributes: { src: 'https://cdnjs.cloudflare.com/ajax/libs/react-router/6.3.0/react-router.production.min.js' }
+}, {
+    tagName: 'script',
+    closeTag: true,
+    attributes: { src: 'https://cdnjs.cloudflare.com/ajax/libs/react-router-dom/6.3.0/react-router-dom.production.min.js' }
 }];
 
 module.exports = merge(common, {
@@ -24,7 +32,9 @@ module.exports = merge(common, {
         static: './src/static.tsx'
     },
     output: {
-        libraryTarget: 'umd'
+        library: {
+            type: 'umd'
+        }
     },
     module: {
         rules: [{

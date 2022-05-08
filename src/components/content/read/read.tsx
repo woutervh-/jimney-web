@@ -5,7 +5,9 @@ import { ElegyOfTheStars } from './elegy-of-the-stars/elegy-of-the-stars';
 export class Read extends React.PureComponent<{}, never> {
     render() {
         return <React.Fragment>
-            <ReactRouterDOM.Route path="/read/elegy-of-the-stars" component={ElegyOfTheStars} />
+            <ReactRouterDOM.Routes>
+                <ReactRouterDOM.Route path="/read/elegy-of-the-stars" element={<ElegyOfTheStars />} />
+            </ReactRouterDOM.Routes>
         </React.Fragment>;
     }
 }

@@ -21,7 +21,7 @@ export class Blog extends React.PureComponent<{}, BlogState> {
             this.dereference = posts.dereference;
             this.setState({ entries: posts.entries });
         } catch (error) {
-            this.setState({ entries: error });
+            this.setState({ entries: error as Error });
         }
     }
 

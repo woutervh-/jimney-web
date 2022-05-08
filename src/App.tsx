@@ -23,15 +23,19 @@ export class App extends React.Component<{}, never> {
             </header>
             <section className="content">
                 <main className="content-main">
-                    <ReactRouterDOM.Route exact path="/" component={Stories} />
-                    <ReactRouterDOM.Route path="/author" component={Author} />
-                    <ReactRouterDOM.Route path="/contact" component={Contact} />
-                    <ReactRouterDOM.Route path="/contact-thanks" component={ContactThanks} />
-                    <ReactRouterDOM.Route path="/resources" component={Resources} />
-                    <ReactRouterDOM.Route path="/blog" component={Blog} />
+                    <ReactRouterDOM.Routes>
+                        <ReactRouterDOM.Route path="/" element={<Stories />} />
+                        <ReactRouterDOM.Route path="/author" element={<Author />} />
+                        <ReactRouterDOM.Route path="/contact" element={<Contact />} />
+                        <ReactRouterDOM.Route path="/contact-thanks" element={<ContactThanks />} />
+                        <ReactRouterDOM.Route path="/resources" element={<Resources />} />
+                        <ReactRouterDOM.Route path="/blog" element={<Blog />} />
+                    </ReactRouterDOM.Routes>
                 </main>
                 <aside className="content-aside">
-                    <ReactRouterDOM.Route path="/blog" component={BlogSideBar} />
+                    <ReactRouterDOM.Routes>
+                        <ReactRouterDOM.Route path="/blog" element={<BlogSideBar />} />
+                    </ReactRouterDOM.Routes>
                     <SideBar />
                 </aside>
             </section>

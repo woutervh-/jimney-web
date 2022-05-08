@@ -20,7 +20,7 @@ export class BlogSideBar extends React.PureComponent<{}, BlogSideBarState> {
             this.dereference = posts.dereference;
             this.setState({ entries: posts.entries });
         } catch (error) {
-            this.setState({ entries: error });
+            this.setState({ entries: error as Error });
         }
     }
 

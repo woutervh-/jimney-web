@@ -13,15 +13,17 @@ import { Epilogue } from './epilogue';
 export class ElegyOfTheStars extends React.PureComponent<{}, never> {
     render() {
         return <React.Fragment>
-            <ReactRouterDOM.Route exact path="/read/elegy-of-the-stars" component={Chapter1} />
-            <ReactRouterDOM.Route path="/read/elegy-of-the-stars/2" component={Chapter2} />
-            <ReactRouterDOM.Route path="/read/elegy-of-the-stars/3" component={Chapter3} />
-            <ReactRouterDOM.Route path="/read/elegy-of-the-stars/4" component={Chapter4} />
-            <ReactRouterDOM.Route path="/read/elegy-of-the-stars/5" component={Chapter5} />
-            <ReactRouterDOM.Route path="/read/elegy-of-the-stars/6" component={Chapter6} />
-            <ReactRouterDOM.Route path="/read/elegy-of-the-stars/7" component={Chapter7} />
-            <ReactRouterDOM.Route path="/read/elegy-of-the-stars/8" component={Chapter8} />
-            <ReactRouterDOM.Route path="/read/elegy-of-the-stars/epilogue" component={Epilogue} />
+            <ReactRouterDOM.Routes>
+                <ReactRouterDOM.Route path="/read/elegy-of-the-stars" element={<Chapter1 />} />
+                <ReactRouterDOM.Route path="/read/elegy-of-the-stars/2" element={<Chapter2 />} />
+                <ReactRouterDOM.Route path="/read/elegy-of-the-stars/3" element={<Chapter3 />} />
+                <ReactRouterDOM.Route path="/read/elegy-of-the-stars/4" element={<Chapter4 />} />
+                <ReactRouterDOM.Route path="/read/elegy-of-the-stars/5" element={<Chapter5 />} />
+                <ReactRouterDOM.Route path="/read/elegy-of-the-stars/6" element={<Chapter6 />} />
+                <ReactRouterDOM.Route path="/read/elegy-of-the-stars/7" element={<Chapter7 />} />
+                <ReactRouterDOM.Route path="/read/elegy-of-the-stars/8" element={<Chapter8 />} />
+                <ReactRouterDOM.Route path="/read/elegy-of-the-stars/epilogue" element={<Epilogue />} />
+            </ReactRouterDOM.Routes>
         </React.Fragment>;
     }
 }

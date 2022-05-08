@@ -1,6 +1,6 @@
 /**
- * Content copyright 2018 by Jasmin Gelinck.
- * Website design/script copyright 2018 by Wouter van Heeswijk.
+ * Content copyright 2022 by Jasmin Gelinck.
+ * Website design/script copyright 2022 by Wouter van Heeswijk.
  */
 
 import * as React from 'react';

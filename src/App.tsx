@@ -10,11 +10,13 @@ import { Blog } from './components/content/blog/blog';
 import { SideBar } from './components/side-bar/side-bar';
 import { BlogSideBar } from './components/side-bar/blog/blog-side-bar';
 import { ContactThanks } from './components/content/contact/contact-thanks';
+import { Bubbles } from './components/bubbles/bubbles';
 import './style.scss';
 
 export class App extends React.Component<{}, never> {
     render() {
         return <React.Fragment>
+            <Bubbles />
             <header>
                 <Title />
                 <nav>

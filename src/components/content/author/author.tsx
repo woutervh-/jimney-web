@@ -1,9 +1,12 @@
 import * as React from 'react';
+import * as PortaitPicture from 'images/20211120_170324.jpg?size=260';
+import './style.scss';
 
 export class Author extends React.PureComponent<{}, never> {
     render() {
         return <React.Fragment>
-            <p>Jasmin Gelinck is the author of two novels and several short stories in sci-fi and fantasy. Jasmin was born in Austria, but currently lives in the Netherlands, where she writes, plays video games, and reads too many books.</p>
+            <img src={PortaitPicture} className="portrait-picture" />
+            <p>Jasmin Gelinck (she/her) is a sci-fi and fantasy writer from Austria, currently residing in the Netherlands. Jasmin loves challenges (in sports, on the page, in nature), games, soft and friendly things, and long hikes through the middle of nowhere. Her stories often deal with darker things, however, there'll always be a ray of hope at the end.</p>
         </React.Fragment>;
     }
 }

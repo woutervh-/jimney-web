@@ -117,22 +117,8 @@ figure {
 
 .bubble {
     position: absolute;
-    top: 80px;
-    left: 10px;
-    width: 60px;
-    height: 60px;
     background-size: cover;
     background-image: url(./images/bubble.svg);
-}
-
-.bubble-2 {
-    position: absolute;
-    top: 150px;
-    left: 10px;
-    width: 60px;
-    height: 60px;
-    background-size: cover;
-    background-image: url(./images/bubble-2.svg);
 }
 
 a[target="_blank"]:after {

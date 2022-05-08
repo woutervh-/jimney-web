@@ -29,7 +29,10 @@ module.exports = merge(common, {
         }, {
             test: /\.svg$/,
             use: [{
-                loader: 'url-loader'
+                loader: 'url-loader',
+                options: {
+                    esModule: false
+                }
             }],
             include: [path.resolve(__dirname, 'src/images')]
         }]

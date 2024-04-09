@@ -61,7 +61,8 @@ class HtmlWebpackStaticPlugin {
             const dom = new jsdom.JSDOM('', { runScripts: 'outside-only' });
             dom.virtualConsole.sendTo(console);
             const script = new vm.Script(compilation.assets[jsFiles[0]].source());
-            dom.runVMScript(script);
+            const vmContext = dom.getInternalVMContext();
+            script.runInContext(vmContext);
 
             if (typeof dom.window.default !== 'function') {
                 throw new Error('Chunk ' + JSON.stringify(htmlPluginData.plugin.options.entry) + ' did not export a function.');

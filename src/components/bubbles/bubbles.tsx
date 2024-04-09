@@ -11,14 +11,15 @@ export class Bubbles extends React.PureComponent<{}, never> {
 
         const bubbles: { x: number, y: number, s: number }[] = [];
 
-        for (let i = 0; i < 20; i++) {
+        for (let i = 0; i < 30; i++) {
             const left = Math.random() < 0.5;
             const x = (left ? 0 : 0.9) + 0.1 * Math.random();
-            const y = 0.02 + 0.4 * Math.random();
-            const s = 30 + 60 * Math.random();
+            const yp = Math.random();
+            const y = (0.02 + 0.8 * yp) ** 3;
+            const s = 30 + 60 * Math.random() * (1 - yp);
             bubbles.push({
                 x: Math.round(x * 100),
-                y: Math.round((y ** 2) * 100),
+                y: Math.round(y * 100),
                 s: Math.round(s)
             });
         }

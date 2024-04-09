@@ -9,7 +9,7 @@ export interface PreviewImage {
 export interface PreviewAmazon {
     type: 'amazon';
     asin: string;
-    ref: string;
+    ref?: string;
 }
 
 export type Preview = PreviewImage | PreviewAmazon;
@@ -61,7 +61,7 @@ export class Story extends React.PureComponent<StoryProps, never> {
                     allowFullScreen
                     className="story-preview-amazon"
                     // style={{ maxWidth: '100%' }}
-                    src={`https://read.amazon.com/kp/card?asin=${this.props.preview.asin}&preview=newtab&linkCode=kpe&ref_=${this.props.preview.ref}`}
+                    src={`https://read.amazon.com/kp/card?asin=${this.props.preview.asin}&preview=newtab&linkCode=kpe&ref_=${this.props.preview.ref || ''}`}
                 />
             </aside>;
         }

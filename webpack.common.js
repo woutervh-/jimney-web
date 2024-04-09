@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const postcssPresetEnv = require('postcss-preset-env');
 const HtmlWebpackStaticPlugin = require('./html-webpack-static-plugin');
 const webpackHash = require('./webpack.hash');
 
@@ -25,7 +26,12 @@ module.exports = {
             }, {
                 loader: 'css-loader'
             }, {
-                loader: 'postcss-loader'
+                loader: 'postcss-loader',
+                options: {
+                    postcssOptions: {
+                        plugins: [postcssPresetEnv()],
+                    },
+                },
             }, {
                 loader: 'sass-loader'
             }]

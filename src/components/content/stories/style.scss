@@ -10,13 +10,13 @@
 }
 
 .story {
-    margin: 10px;
+    margin: 10px 12px;
     padding: 12px;
     flex-basis: 45%;
     flex-grow: 1;
     overflow-x: auto;
     background-color: $surface;
-    box-shadow: 0 0 1px darken($surface, 30%);
+    box-shadow: 0 0 8px -3px darken($surface, 30%);
 
     @include small {
         display: flex;

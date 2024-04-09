@@ -6,7 +6,8 @@ export class Author extends React.PureComponent<{}, never> {
     render() {
         return <React.Fragment>
             <img src={PortaitPicture} className="portrait-picture" />
-            <p>Jasmin Gelinck (she/her) is a sci-fi and fantasy writer from Austria, currently residing in the Netherlands. Jasmin loves challenges (in sports, on the page, in nature), games, soft and friendly things, and long hikes through the middle of nowhere. Her stories often deal with darker things, however, there'll always be a ray of hope at the end.</p>
+            <p>Jasmin Gelinck writes sci-fi and fantasy with gay guys and gals. Jasmin was born in Austria, but currently lives in the Netherlands. She doesn't really know why she's typing this in the third person, but hey, that seems to be the popular style.</p>
+            <p>In any case, Jasmin really hopes you'll enjoy her books, and that you'll review one (or all!) of her books! ❤️</p>
         </React.Fragment>;
     }
 }

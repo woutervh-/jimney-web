@@ -8,6 +8,7 @@
     justify-content: center;
     flex-wrap: wrap;
     background-color: $primary;
+    box-shadow: inset 0px 0px 16px -4px rgba(0, 0, 0, 0.5);
 }
 
 .menu-item {
@@ -18,7 +19,9 @@
     text-transform: uppercase;
     background-color: $primary;
 
-    &:hover, &.active, &:focus {
+    &:hover,
+    &.active,
+    &:focus {
         background-color: lighten($primary, 20%);
     }
 
